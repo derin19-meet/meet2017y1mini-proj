@@ -10,7 +10,7 @@ turtle.setup(SIZE_X,SIZE_Y)
 turtle.penup()
 
 SQUARE_SIZE= 20
-START_LENGTH= 10
+START_LENGTH= 5
 
 pos_list=[]
 stamp_list=[]
@@ -130,21 +130,22 @@ def move_snake():
         food_pos.pop(food_ind)
         food_stamps.pop(food_ind)
         print("you have eaten the food")
+
+        stamp_list.append(food_pos)
+
+        
+
         make_food()
+        
+        
 
+        
 
-        if snake.pos() in snake.pos:
-            # amir's hint: print(pos_list)
-            snake_ind=snake_pos.index(snake.pos())
-            snake.clearstamp(snake_stamps[snake_ind])
-            snake_pos.pop(snake_ind)
-            snake_stamps.pop(snake_ind)
-            snake_stamps.pop(snake_ind)
-            print("you have eaten yourself")
-            quit()
-
-
-
+    
+   
+    if pos_list[-1] in pos_list[0:-1]:
+        print("you have eaten yourself")
+        quit()
 
 
     new_pos=snake.pos()
@@ -179,6 +180,15 @@ food=turtle.clone()
 food.shape("trash.gif")
 
 make_food()
+
+
+
+
+        
+            
+            
+
+
 
 
 

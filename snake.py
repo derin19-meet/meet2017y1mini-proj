@@ -55,6 +55,8 @@ LEFT_EDGE=-400
 BOTTOM_EDGE=-250
 RIGHT_EDGE= 400
 
+
+
 def up():
     global direction
     direction=UP
@@ -82,10 +84,10 @@ turtle.onkeypress(right, RIGHT_ARROW)
 turtle.listen()
 
 def make_food():
-    min_x= -int(SIZE_X/2/SQUARE_SIZE)+1
-    max_x= int(SIZE_X/2/SQUARE_SIZE)-1
-    min_y= -int(SIZE_Y/2/SQUARE_SIZE)-1
-    max_y= int(SIZE_Y/2/SQUARE_SIZE)+1
+    min_x= -int(SIZE_X/2.5/SQUARE_SIZE)+1
+    max_x= int(SIZE_X/2.5/SQUARE_SIZE)-1
+    min_y= -int(SIZE_Y/2.5/SQUARE_SIZE)+1
+    max_y= int(SIZE_Y/2.5/SQUARE_SIZE)-1
 
     food_x= random.randint(min_x, max_x)*SQUARE_SIZE
     food_y= random.randint(min_y, max_y)*SQUARE_SIZE
@@ -131,8 +133,19 @@ def move_snake():
         food_stamps.pop(food_ind)
         print("you have eaten the food")
 
-        stamp_list.append(food_pos)
+        #turtle.write("+1 POINT")
+        
 
+
+        
+        stamp_list.append(food_pos)
+        pos_list.append(food_pos)
+
+        
+        
+
+        
+        
         
 
         make_food()
